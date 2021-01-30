@@ -1,6 +1,8 @@
 (ns electron.core
   (:require [electron.handler :as handler]
             [electron.updater :refer [init-updater]]
+            [electron.ipfs :as ipfs]
+            [electron.mdns :as mdns]
             [electron.utils :refer [mac? win32? prod? dev? log open]]
             [clojure.string :as string]
             ["fs" :as fs]
@@ -104,13 +106,17 @@
                             t1 (setup-interceptor!)
                             t2 (setup-app-manager! win)
                             tt (handler/set-ipc-handler! win)]
+                        (ipfs/start)
 
                         (vreset! *teardown-fn
-                                 #(doseq [f [t0 t1 t2 tt]]
-                                    (and f (f)))))))
+                                 #(do
+                                    (ipfs/stop)
+                                    (doseq [f [t0 t1 t2 tt]]
+                                      (and f (f))))))))
 
            ;; setup effects
            (@*setup-fn)
+          
 
            ;; main window events
            (.on win "close" #(if (or @*quitting? (not mac?))

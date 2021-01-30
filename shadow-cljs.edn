@@ -2,6 +2,9 @@
 {:deps     true
  :nrepl        {:port 8701}
 
+ :repositories {"central" {:url "https://maven.aliyun.com/nexus/content/groups/public/"}
+                "clojars" {:url "https://mirrors.ustc.edu.cn/clojars/"}}
+ 
  :builds
  {:app
   {:target :browser

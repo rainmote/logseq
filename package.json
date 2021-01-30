@@ -65,16 +65,25 @@
         "fuzzysort": "^1.1.4",
         "gulp-cached": "^1.1.1",
         "ignore": "^5.1.8",
+        "ipfs-core": "^0.4.2",
         "jszip": "^3.5.0",
+        "libp2p": "^0.30.6",
+        "libp2p-mdns": "^0.15.0",
         "mldoc": "^0.3.7",
         "mousetrap": "^1.6.5",
         "path": "^0.12.7",
+        "peer-id": "^0.14.3",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-resize-context": "^3.0.0",
         "react-textarea-autosize": "^8.0.1",
         "react-transition-group": "^4.3.0",
         "url": "^0.11.0",
-        "yargs-parser": "^20.2.4"
+        "y-array": "^10.1.4",
+        "y-ipfs-connector": "^2.3.0",
+        "y-memory": "^8.0.9",
+        "y-text": "^9.5.1",
+        "yargs-parser": "^20.2.4",
+        "yjs": "^13.4.12"
     }
 }

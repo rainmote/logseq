@@ -273,7 +273,8 @@
                                      :else
                                      (notification/show! "Please make sure the page exists!" :warning))))}]]]])
 
-         (when (string/starts-with? current-repo "https://")
+         (when (some-> current-repo
+                       (string/starts-with? "https://"))
            (toggle "enable_git_auto_push"
                    "Enable Git auto push"
                    enable-git-auto-push?
